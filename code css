@@ -1,0 +1,5 @@
+function searchVideo() {
+    var searchQuery = document.getElementById("search-input").value;
+    var videoURL = "https://www.youtube.com/results?search_query=" + encodeURIComponent(searchQuery);
+    window.open(videoURL, "_blank");
+}
