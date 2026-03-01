@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Choisir la langue</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <h1>Bienvenue sur notre site</h1>
+    </header>
+
+    <!-- Sélection de la langue -->
+    <section class="language-selection">
+        <label for="language-select">Choisissez votre langue :</label>
+        <select id="language-select" onchange="changeLanguage()">
+            <option value="fr">Français</option>
+            <option value="en">English</option>
+            <option value="es">Español</option>
+        </select>
+    </section>
+
+    <!-- Texte à afficher selon la langue -->
+    <section id="content">
+        <h2 id="greeting">Bonjour, comment ça va ?</h2>
+    </section>
+
+    <script src="script.js"></script>
+</body>
+</html>
