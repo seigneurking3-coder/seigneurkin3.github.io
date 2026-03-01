@@ -1,0 +1,12 @@
+function changeLanguage() {
+    var language = document.getElementById("language-select").value;
+    var greeting = document.getElementById("greeting");
+
+    if (language === "fr") {
+        greeting.textContent = "Bonjour, comment ça va ?";
+    } else if (language === "en") {
+        greeting.textContent = "Hello, how are you?";
+    } else if (language === "es") {
+        greeting.textContent = "Hola, ¿cómo estás?";
+    }
+}
