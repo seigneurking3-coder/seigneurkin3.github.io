@@ -1,0 +1,34 @@
+// Remplacer "YOUR_API_KEY" par ta clé API réelle si nécessaire.
+var apiKey = "AQ.Ab8RN6Iqag90gpo9z1hWqYLlHq3a5dZikNCXxfjhQUXhay6F8w"; // Ta clé API YouTube
+
+function searchVideos() {
+    var query = document.getElementById("search-input").value; // Récupérer la requête de recherche
+    var url = `https://www.googleapis.com/youtube/v3/search?part=snippet&q=${encodeURIComponent(query)}&type=video&key=${apiKey}`;
+
+    // Effectuer une requête HTTP GET à l'API YouTube
+    fetch(url)
+        .then(response => response.json())
+        .then(data => {
+            var videoContainer = document.querySelector(".videos");
+            videoContainer.innerHTML = ''; // Effacer les anciens résultats
+
+            // Pour chaque vidéo retournée par l'API
+            data.items.forEach(item => {
+                var videoId = item.id.videoId; // ID de la vidéo
+                var videoTitle = item.snippet.title; // Titre de la vidéo
+                var videoDescription = item.snippet.description; // Description de la vidéo
+                var videoThumbnail = item.snippet.thumbnails.high.url; // URL de la miniature
+
+                // Créer un élément HTML pour afficher la vidéo
+                var videoItem = `
+                    <div class="video-item">
+                        <iframe width="300" height="200" src="https://www.youtube.com/embed/${videoId}" frameborder="0" allowfullscreen></iframe>
+                        <p><strong>${videoTitle}</strong></p>
+                        <p>${videoDescription}</p>
+                    </div>
+                `;
+                videoContainer.innerHTML += videoItem; // Ajouter la vidéo à la page
+            });
+        })
+        .catch(error => console.error("Erreur lors de la recherche :", error));
+}
