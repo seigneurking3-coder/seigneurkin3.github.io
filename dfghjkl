@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Regardez des streams en direct sur mon site. Profitez de l'expérience de streaming !">
+  <title>Mon Stream Live</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #171717;
+      color: #fff;
+      margin: 0;
+      padding: 0;
+      text-align: center;
+    }
+    .container {
+      margin-top: 50px;
+    }
+    .stream {
+      margin-bottom: 30px;
+    }
+    iframe {
+      border: none;
+      width: 100%;
+      height: 56.25vw; /* ratio 16:9 */
+      max-width: 800px;
+      max-height: 450px;
+      background: #000;
+    }
+    .footer {
+      margin-top: 50px;
+      color: #aaa;
+    }
+    .stream-link {
+      color: #FF0000;
+      text-decoration: none;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Bienvenue sur Mon Stream Live !</h1>
+    <div class="stream">
+      <!-- Remplacez l'URL ci-dessous par votre lien YouTube Live ou Twitch -->
+      <iframe src="https://www.youtube.com/embed/live_stream?channel=UC4QobU6STFB0P71PMvOGN5A" allowfullscreen></iframe>
+    </div>
+    <p>Profitez du live streaming !</p>
+    <p class="footer">Pour plus de streams, visitez notre <a href="https://www.youtube.com/c/SeigneurKing3" class="stream-link" target="_blank">chaîne YouTube</a>.</p>
+  </div>
+</body>
+</html>
